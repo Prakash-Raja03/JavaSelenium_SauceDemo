@@ -1,0 +1,23 @@
+# Maven
+target/
+build/
+*.class
+
+# Test / Selenium output
+test-output/
+logs/
+screenshots/
+*.log
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+bin/
+
+# OS
+.DS_Store
+Thumbs.db

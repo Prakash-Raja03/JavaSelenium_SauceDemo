@@ -2,13 +2,11 @@
 
 A production-style UI test automation framework built with **Java + Selenium WebDriver 4 + TestNG**, following the **Page Object Model (POM)** design pattern.
 
-> Authored by **Prakash Raja** — QA Engineer with 2+ years at Amazon (automation & manual testing of tablet products).
-
 The framework automates the [SauceDemo](https://www.saucedemo.com) e-commerce demo application and demonstrates the core building blocks used in real-world Selenium frameworks.
 
 ---
 
-## ✨ Highlights
+## Highlights
 
 - **Page Object Model (POM)** — clean separation of locators (private) and actions (public).
 - **Cross-browser** — Chrome, Firefox, Edge via a simple `DriverFactory`.
@@ -22,7 +20,7 @@ The framework automates the [SauceDemo](https://www.saucedemo.com) e-commerce de
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -35,7 +33,7 @@ The framework automates the [SauceDemo](https://www.saucedemo.com) e-commerce de
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 selenium-testng-framework/
@@ -62,7 +60,7 @@ selenium-testng-framework/
 
 ---
 
-## ✅ Prerequisites
+## Prerequisites
 
 - **Java 17+** (`java -version`)
 - **Maven 3.8+** (`mvn -version`)
@@ -70,7 +68,7 @@ selenium-testng-framework/
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 Run all tests (headless, parallel):
 ```bash
@@ -100,7 +98,7 @@ mvn test -DbaseUrl=https://www.saucedemo.com -DexplicitWait=20
 
 ---
 
-## 🧪 What the Tests Cover
+## What the Tests Cover
 
 **LoginTest**
 - Valid login lands on the Products page.
@@ -117,30 +115,9 @@ Verified run: **10 tests, 0 failures** (headless Chrome).
 
 ---
 
-## 🏗️ Framework Concepts Demonstrated (interview talking points)
-
-| Concept | Where |
-|---|---|
-| Page Object Model | `pages/LoginPage.java`, `pages/ProductsPage.java` |
-| Reusable waited actions | `base/BasePage.java` |
-| Cross-browser factory + ThreadLocal | `driver/DriverFactory.java` |
-| Explicit / fluent waits | `BasePage` (`WebDriverWait`, `ExpectedConditions`) |
-| Data-driven testing | `LoginTest` `@DataProvider` |
-| Hard vs soft assertions | `LoginTest` (`Assert`) / `ProductsTest` (`SoftAssert`) |
-| Parallel execution | `suites/testng.xml` (`parallel="methods"`) |
-| Config externalisation | `config/ConfigReader.java` + `config.properties` |
-| Select / Actions / JSExecutor | `BasePage` helper methods |
-
----
-
-## 🚀 Extending the Framework
+## Extending the Framework
 
 - Add a new page → create a class under `pages/` extending `BasePage`.
 - Add a new test → create a class under `tests/` extending `BaseTest`.
 - Add Extent/Allure reporting, screenshots-on-failure (TestNG `ITestListener`), and a GitHub Actions workflow for full CI.
 
----
-
-## 📄 License
-
-MIT — free to use and adapt.

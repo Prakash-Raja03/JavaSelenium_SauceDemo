@@ -4,7 +4,7 @@ Two ways to watch the tests execute in Chrome. Both need Maven on PATH:
     export PATH=$PATH:~/tools/apache-maven-3.9.9/bin
 
 ------------------------------------------------------------------------
-OPTION A — Watch DIRECTLY in Chrome on your real screen  (simplest)
+A — Watch DIRECTLY in Chrome on your real screen  (simplest)
 ------------------------------------------------------------------------
 One terminal. Chrome opens on your actual desktop.
 
@@ -15,7 +15,7 @@ One terminal. Chrome opens on your actual desktop.
     mvn test -Dheadless=false -Dtest=LoginTest#testValidLogin   # one method
 
 ------------------------------------------------------------------------
-OPTION B — Watch through VNC (isolated virtual display)
+B — Watch through VNC (isolated virtual display)
 ------------------------------------------------------------------------
 Three terminals. Chrome renders inside the VNC window, not your desktop.
 

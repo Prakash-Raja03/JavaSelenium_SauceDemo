@@ -13,7 +13,7 @@
     <name>Selenium TestNG Automation Framework</name>
     <description>
         A production-style UI automation framework using Selenium WebDriver 4,
-        TestNG, and the Page Object Model (POM). Built by Prakash Raja.
+        TestNG, and the Page Object Model (POM).
     </description>
 
     <properties>

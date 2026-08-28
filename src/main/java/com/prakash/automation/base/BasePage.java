@@ -26,9 +26,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  * BasePage centralises common WebDriver interactions with proper
  * synchronization (explicit waits). Every Page Object extends this,
  * so pages stay clean and we never repeat wait/click boilerplate.
- *
- * This class is essentially a set of "safe" wrappers around raw Selenium
- * calls — a very common real-world framework pattern.
  */
 public abstract class BasePage {
 
@@ -43,8 +40,6 @@ public abstract class BasePage {
         this.wait = new WebDriverWait(driver,
                 Duration.ofSeconds(ConfigReader.getInt("explicitWait")));
     }
-
-    // ---------- Debug: step screenshot capture ----------
 
     /**
      * When 'screenshotSteps' is true, saves a PNG of the current page into the

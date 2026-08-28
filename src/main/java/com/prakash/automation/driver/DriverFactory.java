@@ -14,7 +14,6 @@ import java.time.Duration;
 /**
  * Creates and manages the WebDriver instance.
  *
- * Key design points (great talking points in an interview):
  *  - ThreadLocal<WebDriver> makes the driver thread-safe so TestNG can run
  *    tests in PARALLEL without threads sharing/clobbering one browser.
  *  - Cross-browser support via a simple factory switch (polymorphism:

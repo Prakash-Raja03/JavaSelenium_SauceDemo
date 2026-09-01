@@ -5,7 +5,7 @@ pipeline {
     // (Names below must match exactly what you name them there.)
     tools {
         maven 'Maven-3.8'
-        jdk   'JDK-21'
+        jdk   'JDK-17'
     }
 
     // Let the job be started with a chosen browser/suite from the Jenkins UI.

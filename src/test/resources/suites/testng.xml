@@ -5,10 +5,14 @@
   TestNG suite.
    - parallel="methods" + thread-count runs tests concurrently
      (safe here because DriverFactory uses ThreadLocal<WebDriver>).
+   - thread-count is intentionally 1 for resource-constrained CI agents
+     (e.g. sandboxed containers) where multiple concurrent headless Chrome
+     instances exhaust memory and cause UnreachableBrowserException.
+     Raise it to 2+ on a larger agent to exercise true parallelism.
    - Run everything:            mvn test
    - Run only smoke tests:      mvn test -Dgroups=smoke
 -->
-<suite name="RegressionSuite" parallel="methods" thread-count="2" verbose="1">
+<suite name="RegressionSuite" parallel="methods" thread-count="1" verbose="1">
 
     <test name="SauceDemo UI Tests">
         <classes>

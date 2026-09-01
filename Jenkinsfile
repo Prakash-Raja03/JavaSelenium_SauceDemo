@@ -21,6 +21,13 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '20'))
     }
 
+    // Poll GitHub every ~5 minutes; run a build automatically if new commits are found.
+    // (Polling is used instead of a webhook because this Jenkins runs on localhost
+    //  and is not reachable from GitHub's servers.)
+    triggers {
+        pollSCM('H/5 * * * *')
+    }
+
     stages {
         stage('Checkout') {
             steps {

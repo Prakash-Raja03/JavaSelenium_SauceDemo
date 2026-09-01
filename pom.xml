@@ -29,6 +29,10 @@
 
         <!-- Default TestNG suite; override with -Dsurefire.suiteXmlFiles=... -->
         <suiteXmlFile>src/test/resources/suites/testng.xml</suiteXmlFile>
+
+        <!-- Parallel threads for the regression suite. Default 1 (safe on small
+             CI agents). Override on a larger machine, e.g. -DthreadCount=3 -->
+        <threadCount>1</threadCount>
     </properties>
 
     <dependencies>
@@ -72,6 +76,11 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
                     </suiteXmlFiles>
+                    <!-- Overrides the suite XML's parallelism so it can be tuned
+                         per environment via -DthreadCount=N (default 1, safe for
+                         small CI agents; raise on larger machines). -->
+                    <parallel>methods</parallel>
+                    <threadCount>${threadCount}</threadCount>
                     <!-- Continue building even if tests fail, so reports are generated -->
                     <testFailureIgnore>false</testFailureIgnore>
                 </configuration>
